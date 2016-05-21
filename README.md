@@ -9,3 +9,10 @@ ajimi-training
     ```
     bundle install --path vendor/bundle
     ```
+
+2. ajimi setup
+
+    ```
+    bundle exec ajimi-init
+    ```
+

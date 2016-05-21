@@ -1,0 +1,50 @@
+# Ajimi configuration file
+
+# source setting
+source "source.example.com", {
+  ssh_options: {
+    host: "127.0.0.1",
+    user: "vagrant",
+    key: "~/.ssh/id_rsa"
+  },
+  enable_nice: true
+}
+
+# target setting
+target "target.example.com", {
+  ssh_options: {
+    user: "ec2-user",
+    key: "~/.ssh/id_rsa"
+  },
+  enable_nice: false
+}
+
+# check setting
+check_root_path "/"
+
+pruned_paths [
+  "/dev",
+  "/proc",
+]
+
+ignored_paths [
+  *@config[:pruned_paths],
+  %r|^/lost\+found/?.*|,
+  %r|^/media/?.*|,
+  %r|^/mnt/?.*|,
+  %r|^/run/?.*|,
+  %r|^/sys/?.*|,
+  %r|^/tmp/?.*|
+]
+
+ignored_contents ({
+  "/root/.ssh/authorized_keys" => /Please login as the user \\"ec2-user\\" rather than the user \\"root\\"/
+})
+
+pending_paths [
+  "/etc/sudoers"
+]
+
+pending_contents ({
+  "/etc/hosts" => /127\.0\.0\.1/
+})
