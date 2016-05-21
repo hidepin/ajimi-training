@@ -1,20 +1,19 @@
 # Ajimi configuration file
 
 # source setting
-source "source.example.com", {
+source "vagrant1", {
   ssh_options: {
     host: "127.0.0.1",
-    user: "vagrant",
-    key: "~/.ssh/id_rsa"
+    user: "vagrant"
   },
   enable_nice: true
 }
 
 # target setting
-target "target.example.com", {
+target "vagrant2", {
   ssh_options: {
-    user: "ec2-user",
-    key: "~/.ssh/id_rsa"
+    host: "127.0.0.1",
+    user: "vagrant"
   },
   enable_nice: false
 }
