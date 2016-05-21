@@ -24,6 +24,11 @@ check_root_path "/"
 pruned_paths [
   "/dev",
   "/proc",
+  "/var/log",
+  "/var/cache",
+  "/var/lib/yum",
+  "/var/lib/dhclient",
+  "/root/.bash_history"
 ]
 
 ignored_paths [
