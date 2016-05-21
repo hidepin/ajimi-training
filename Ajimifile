@@ -4,7 +4,7 @@
 source "vagrant1", {
   ssh_options: {
     host: "127.0.0.1",
-    user: "vagrant"
+    user: "root"
   },
   enable_nice: true
 }
@@ -13,7 +13,7 @@ source "vagrant1", {
 target "vagrant2", {
   ssh_options: {
     host: "127.0.0.1",
-    user: "vagrant"
+    user: "root"
   },
   enable_nice: false
 }
