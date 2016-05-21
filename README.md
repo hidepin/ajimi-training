@@ -4,7 +4,8 @@ ajimi-training
 セットアップ
 ------------------------------------------------------------
 
-1.bundle install
+1. bundle install
+
     ```
     bundle install --path vendor/bundle
     ```
